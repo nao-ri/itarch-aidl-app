@@ -19,7 +19,7 @@ class RemoteService : Service() {
             //補色を計算
             //ソート用のリストを作る
             var list_color= mutableListOf(Color.red(base_color), Color.green(base_color), Color.blue(base_color))
-            //ソートと最大値と最小値の取り出し
+            //ソートと最大値と最小値を合計
             list_color.sort()
             var total_value=list_color[0]+list_color[2]
             //最大値を255に補正
@@ -34,7 +34,7 @@ class RemoteService : Service() {
             var blue_half=(Color.blue(base_color)- Color.blue(inversion_color))/2
             var half_color=Color.argb(255, red_half, green_half, blue_half)
 
-
+//base 補色　中間色を返す
             val list: List<Int> = arrayListOf(base_color,inversion_color,half_color)
             return list
         }
